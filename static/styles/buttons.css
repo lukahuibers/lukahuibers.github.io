@@ -9,15 +9,17 @@
 .base-button:hover:not(.selected) {
     cursor: pointer;
     border-style: inset;
-    border-color: var(--color-fg) white white var(--color-fg);
+    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+}
+
+.base-button:hover .button-text {
+    transform: translateY(1px);
 }
 
 .base-button.selected {
     border-style: inset;
-    border-color: var(--color-fg) white white var(--color-fg);
-}
-
-.base-button.selected:hover {
+    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+    transform: translateY(1px);
     cursor: default;
 }
 

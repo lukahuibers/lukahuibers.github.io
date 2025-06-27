@@ -1,9 +1,19 @@
 :root {
-    --color-fg: #bebebe;
-    --color-bg: #9b9b9b;
+    /* --color-fg: #bebebe; */
+    /* --color-hl: white; */
+    /* --color-text: #1f221d; */
     --header-height: 85px;
     --std-font-size: 15px;
-    --color-text: #1f221d;
+
+    --color-fg: #c4c9cd;
+    /* --color-fg: #d2cdd4; */
+    --color-bg: #dee4e8;
+    /* --color-hl: #F7F7FF; */
+    --color-hl: #f2fdfb;
+    --color-text: #0B032D;
+
+    --magenta: #843B62;
+    --eggplant: #74546A;
 }
 
 * {
@@ -12,21 +22,22 @@
 
 .outset {
     border-style: outset;
-    border-color: white var(--color-fg) var(--color-fg) white;
+    border-color: var(--color-hl) var(--color-fg) var(--color-fg) var(--color-hl);
     border-width: 2.5px;
     background-color: var(--color-fg);
 }
 
 .inset {
     border-style: inset;
-    border-color: var(--color-fg) white white var(--color-fg);
+    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
     border-width: 2.5px;
     background-color: var(--color-fg);
 }
 
 body {
     min-height: calc(100vh - var(--header-height));
-    background-image: linear-gradient(#59c135, #24523b);
+    /* background-image: linear-gradient(#59c135, #24523b); */
+    background-color: var(--color-bg);
     margin: 0;
     padding: 0;
 }
@@ -49,6 +60,10 @@ header {
 }
 
 .header-bar {
+    padding: 8px;
+    height: 50px;
+    /* text-overflow: clip; */
+    text-wrap-mode: nowrap;
     font-size: 40px;
     color: var(--color-text);
 }
@@ -56,7 +71,12 @@ header {
 .header-buttons {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--color-bg);
+}
+
+.header-buttons-bar {
+    height: 20px;
+    padding: 1px 4px;
+    flex: 1;
 }
 
 footer {
@@ -79,38 +99,4 @@ footer {
     image-rendering: pixelated;
     position: absolute;
     z-index: -1;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 1fr);
-    gap: 20px;
-    width: fit-content;
-    margin: auto;
-}
-
-.grid-item {
-    width: 400px;
-    background-color: var(--color-fg);
-    display: flex;
-    flex-direction: column;
-    padding: 15px 0;
-    gap: 15px;
-    color: var(--color-text);
-}
-
-.grid-item-title {
-    height: calc(var(--std-font-size) * 3);
-    margin: 0 15px;
-    border-style: inset;
-    padding: 5px;
-    font-size: var(--std-font-size);
-}
-
-.grid-item-info {
-    height: calc(var(--std-font-size) * 10);
-    margin: 0 15px;
-    padding: 5px;
-    text-wrap: wrap;
-    font-size: var(--std-font-size);
 }
