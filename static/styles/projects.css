@@ -6,7 +6,7 @@
     gap: 20px;
     width: fit-content;
     margin: auto;
-    padding: 50px 5%;
+    padding: 0 5%;
     justify-content: space-around;
 }
 
@@ -18,10 +18,6 @@
     gap: 15px;
     color: var(--color-text);
 }
-
-
-
-
 
 .grid-item-top {
     display: flex;
@@ -43,12 +39,16 @@
     aspect-ratio: 1 / 1;
 }
 
-.grid-item-progress.current {
-    background-color: var(--magenta);
+.grid-item-progress.finished {
+    background-color: #23e91c;
 }
 
-.grid-item-progress.done {
-    background-color: var(--eggplant);
+.grid-item-progress.todo {
+    background-color: #f18a31;
+}
+
+.grid-item-progress.concept {
+    background-color: #ec1f1f;
 }
 
 .grid-item-info {

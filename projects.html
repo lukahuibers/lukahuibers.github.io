@@ -4,9 +4,9 @@
         <title>My projects</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/index.css">
-        <link rel="stylesheet" type="text/css" href="./static/styles/buttons.css">
-        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/index.css?4">
+        <link rel="stylesheet" type="text/css" href="./static/styles/buttons.css?4">
+        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css?4">
     </head>
 
     <body>
@@ -15,6 +15,7 @@
                 Luka Huibers /// HappyHoLuka
             </div>
             <div class="header-buttons">
+                <div class="outset header-buttons-bar-small"></div>
                 <a class="outset base-button small" href="./index.html">
                     <div class="button-text">
                         Home
@@ -28,24 +29,36 @@
                         About me
                     </div>
                 </a>
+                <a class="outset base-button small" href="./blog.html">
+                    <div class="button-text">
+                        Blog
+                    </div>
+                </a>
+                <a class="outset base-button small" href="./guestbook.html">
+                    <div class="button-text">
+                        Guestbook
+                    </div>
+                </a>
                 <div class="outset header-buttons-bar"></div>
             </div>
         </header>
 
         <main>
-            <p>
-                These are the projects I am working on or have worked on in the past. 
-
-            </p>
+            <div class="text-contents">
+                <p>These are the projects I am working on or have worked on in the past. 
+                    The colour of the top right block on each project indicates the progress or 
+                    state of the project. Green represents it is finished, orange represents it 
+                    is currently being worked on, and red represents that it only yet exists as 
+                    a concept. </p>    
+            </div>
 
             <div class="grid">
-
                 <div class="outset grid-item decal">
                     <div class="grid-item-top">
                         <div class="inset grid-item-title">
                             A personal website
                         </div>
-                        <div class="outset grid-item-progress current"></div>
+                        <div class="outset grid-item-progress todo"></div>
                     </div>
                     <div class="inset grid-item-info">
                         This project consists of making a website via Github Pages (yes, 
@@ -63,7 +76,7 @@
                         <div class="inset grid-item-title">
                             Sudoku puzzle generator
                         </div>
-                        <div class="outset grid-item-progress current"></div>
+                        <div class="outset grid-item-progress todo"></div>
                     </div>
                     <div class="inset grid-item-info">
                         ...
@@ -80,7 +93,7 @@
                         <div class="inset grid-item-title">
                             TITLE
                         </div>
-                        <div class="outset grid-item-progress done"></div>
+                        <div class="outset grid-item-progress finished"></div>
                     </div>
                     <div class="inset grid-item-info">
                         INFO
@@ -97,7 +110,7 @@
                         <div class="inset grid-item-title">
                             TITLE
                         </div>
-                        <div class="outset grid-item-progress"></div>
+                        <div class="outset grid-item-progress concept"></div>
                     </div>
                     <div class="inset grid-item-info">
                         INFO
@@ -114,7 +127,7 @@
                         <div class="inset grid-item-title">
                             TITLE
                         </div>
-                        <div class="outset grid-item-progress"></div>
+                        <div class="outset grid-item-progress concept"></div>
                     </div>
                     <div class="inset grid-item-info">
                         INFO
@@ -131,7 +144,7 @@
                         <div class="inset grid-item-title">
                             TITLE
                         </div>
-                        <div class="outset grid-item-progress"></div>
+                        <div class="outset grid-item-progress concept"></div>
                     </div>
                     <div class="inset grid-item-info">
                         INFO
@@ -148,7 +161,7 @@
                         <div class="inset grid-item-title">
                             TITLE
                         </div>
-                        <div class="outset grid-item-progress"></div>
+                        <div class="outset grid-item-progress concept"></div>
                     </div>
                     <div class="inset grid-item-info">
                         INFO
@@ -162,7 +175,7 @@
             </div>
         </main>
 
-        <footer></footer>
+        <footer class="outset"></footer>
     </body>
 
     <script>
