@@ -1,0 +1,41 @@
+.base-button {
+    background-color: var(--color-fg);
+    text-align: center;
+    align-content: center;
+}
+
+.base-button:hover:not(.selected) {
+    cursor: pointer;
+    border-style: inset;
+    border-color: var(--color-fg) white white var(--color-fg);
+}
+
+.base-button.selected {
+    border-style: inset;
+    border-color: var(--color-fg) white white var(--color-fg);
+}
+
+.base-button.selected:hover {
+    cursor: default;
+}
+
+.base-button.medium {
+    height: 50px;
+    font-size: 40px;
+    padding: 2px 5px;
+    width: fit-content;
+}
+
+.base-button.small {
+    height: 20px;
+    font-size: var(--std-font-size);
+    padding: 1px 4px;
+    width: fit-content;
+}
+
+.base-button.project {
+    height: 35px;
+    font-size: var(--std-font-size);
+    padding: 0 5px;
+    margin: 0 15px;
+}
