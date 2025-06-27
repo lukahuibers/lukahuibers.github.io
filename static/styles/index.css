@@ -25,16 +25,21 @@
 }
 
 body {
-    min-height: calc(100vh - calc(var(--header-height) + 10px));
-    margin: calc(var(--header-height) + 10px) 0 0 0;
-    /* background-color: #59c135; */
+    min-height: calc(100vh - var(--header-height));
     background-image: linear-gradient(#59c135, #24523b);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: var(--header-height);
+    min-height: calc(100vh - calc(2 * var(--header-height)));
 }
 
 header {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: var(--header-height);
     background-color: var(--color-fg);
@@ -44,7 +49,6 @@ header {
 }
 
 .header-bar {
-    padding: 8px;
     font-size: 40px;
     color: var(--color-text);
 }
@@ -52,9 +56,22 @@ header {
 .header-buttons {
     display: flex;
     flex-wrap: wrap;
-    bottom: 0px;
     background-color: var(--color-bg);
 }
+
+footer {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--color-fg);
+}
+
+
+
+
+
 
 .img-64x64 {
     height: 256px;
@@ -64,10 +81,9 @@ header {
     z-index: -1;
 }
 
-
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, 1fr);
     gap: 20px;
     width: fit-content;
     margin: auto;
@@ -75,7 +91,6 @@ header {
 
 .grid-item {
     width: 400px;
-    height: 400px;
     background-color: var(--color-fg);
     display: flex;
     flex-direction: column;
@@ -85,7 +100,7 @@ header {
 }
 
 .grid-item-title {
-    flex: 1;
+    height: calc(var(--std-font-size) * 3);
     margin: 0 15px;
     border-style: inset;
     padding: 5px;
@@ -93,19 +108,9 @@ header {
 }
 
 .grid-item-info {
-    flex: 4;
+    height: calc(var(--std-font-size) * 10);
     margin: 0 15px;
     padding: 5px;
     text-wrap: wrap;
     font-size: var(--std-font-size);
-}
-
-
-footer {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: var(--header-height);
-    background-color: var(--color-fg);
 }
