@@ -6,7 +6,7 @@
     --std-font-size: 15px;
 
     --color-fg: #c4c9cd;
-    /* --color-fg: #d2cdd4; */
+    --color-sh: #7a848c;
     --color-bg: #dee4e8;
     /* --color-hl: #F7F7FF; */
     --color-hl: #f2fdfb;
@@ -14,6 +14,8 @@
 
     --magenta: #843B62;
     --eggplant: #74546A;
+
+    --noise-seed: random(100);
 }
 
 * {
@@ -61,6 +63,8 @@ header {
     text-wrap-mode: nowrap;
     font-size: 40px;
     color: var(--color-text);
+
+    overflow: hidden;
 }
 
 .header-buttons {
@@ -90,7 +94,13 @@ footer {
 
 main {
     margin-top: var(--header-height);
-    min-height: calc(100vh - calc(2 * var(--header-height)));
+    min-height: calc(calc(100vh - calc(2 * var(--header-height))) - 1px);
+    width: 100%;
+    background-image: url(../images/noise_bg.svg);
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"><defs><filter id="noise" x="0" y="0"><feTurbulence baseFrequency="0.000175" numOctaves="8" type="fractalNoise" seed="var(--noise-seed)" in="SourceGraphic" result="noisy"><!-- <animate attributeName="seed" values="1;31" dur="15s" repeatCount="indefinite"></animate> --></feTurbulence><feDiffuseLighting lighting-color="var(--color-fg)" surfaceScale="500" in="noisy" result="noiseImage"><feDistantLight elevation="75" /></feDiffuseLighting><feComponentTransfer in="noiseImage" result="postImage"><!-- <feFuncR type="discrete" tableValues="0.478 0.768 0.870" /> --><feFuncR type="discrete" tableValues="0.768 0.870" /><!-- <feFuncG type="discrete" tableValues="0.517 0.788 0.894" /> --><feFuncG type="discrete" tableValues="0.788 0.894" /><!-- <feFuncB type="discrete" tableValues="0.549 0.803 0.909" /> --><feFuncB type="discrete" tableValues="0.803 0.909" /></feComponentTransfer><!-- <feGaussianBlur stdDeviation="0.35" in="postImage" result="smoothed" /> --></filter><feDisplacementMap in="SourceGraphic" scale="1"></feDisplacementMap></defs><rect width="100%" height="100%" filter="url(%23noise)"></rect></svg>'); */
+    /* Both don't do anything in laptop chrome */
+    background-position: center;
+    background-size: cover;
 }
 
 .text-contents {
