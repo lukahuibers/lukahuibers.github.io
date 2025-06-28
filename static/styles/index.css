@@ -1,40 +1,24 @@
 :root {
-    /* --color-fg: #bebebe; */
-    /* --color-hl: white; */
-    /* --color-text: #1f221d; */
+    /* Structural variables */
     --header-height: 85px;
     --std-font-size: 15px;
-
-    --color-fg: #c4c9cd;
-    --color-sh: #7a848c;
-    --color-bg: #dee4e8;
-    /* --color-hl: #F7F7FF; */
-    --color-hl: #f2fdfb;
-    --color-text: #0B032D;
+    /* Colour variables */
+    --color-fg: #c4c9cd; /* Foreground */
+    --color-sh: #7a848c; /* Shadow */
+    --color-bg: #dee4e8; /* Background */
+    --color-hl: #f2fdfb; /* Highlights */
+    --color-text: #0B032D; /* Text */
 
     --magenta: #843B62;
     --eggplant: #74546A;
-
-    --noise-seed: random(100);
 }
 
 * {
     font-family: 'Lucida Console', Courier, monospace;
 }
 
-.outset {
-    border-style: outset;
-    border-color: var(--color-hl) var(--color-fg) var(--color-fg) var(--color-hl);
-    border-width: 2.5px;
-    background-color: var(--color-fg);
-}
 
-.inset {
-    border-style: inset;
-    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
-    border-width: 2.5px;
-    background-color: var(--color-fg);
-}
+/*==========[ GENERAL STRUCTURE ]==========*/
 
 body {
     min-height: calc(100vh - var(--header-height));
@@ -43,6 +27,28 @@ body {
     margin: 0;
     padding: 0;
 }
+
+main {
+    margin-top: var(--header-height);
+    min-height: calc(calc(100vh - calc(2 * var(--header-height))) - 1px);
+    width: 100%;
+    background-image: url(../images/noise_bg.svg);
+    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"><defs><filter id="noise" x="0" y="0"><feTurbulence baseFrequency="0.000175" numOctaves="8" type="fractalNoise" seed="var(--noise-seed)" in="SourceGraphic" result="noisy"><!-- <animate attributeName="seed" values="1;31" dur="15s" repeatCount="indefinite"></animate> --></feTurbulence><feDiffuseLighting lighting-color="var(--color-fg)" surfaceScale="500" in="noisy" result="noiseImage"><feDistantLight elevation="75" /></feDiffuseLighting><feComponentTransfer in="noiseImage" result="postImage"><!-- <feFuncR type="discrete" tableValues="0.478 0.768 0.870" /> --><feFuncR type="discrete" tableValues="0.768 0.870" /><!-- <feFuncG type="discrete" tableValues="0.517 0.788 0.894" /> --><feFuncG type="discrete" tableValues="0.788 0.894" /><!-- <feFuncB type="discrete" tableValues="0.549 0.803 0.909" /> --><feFuncB type="discrete" tableValues="0.803 0.909" /></feComponentTransfer><!-- <feGaussianBlur stdDeviation="0.35" in="postImage" result="smoothed" /> --></filter><feDisplacementMap in="SourceGraphic" scale="1"></feDisplacementMap></defs><rect width="100%" height="100%" filter="url(%23noise)"></rect></svg>'); */
+    /* Both don't do anything in laptop chrome */
+    background-position: center;
+    background-size: cover;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    flex: 1;
+    height: calc(var(--header-height) - 4px);
+    background-color: var(--color-fg);
+}
+
+
+/*==========[ HEADER ]==========*/
 
 header {
     position: fixed;
@@ -62,6 +68,7 @@ header {
     /* text-overflow: clip; */
     text-wrap-mode: nowrap;
     font-size: 40px;
+    font-weight: bold;
     color: var(--color-text);
 
     overflow: hidden;
@@ -72,35 +79,33 @@ header {
     flex-wrap: wrap;
 }
 
-.header-buttons-bar {
-    height: 20px;
-    padding: 1px 4px;
-    flex: 1;
-}
-
 .header-buttons-bar-small {
     height: 20px;
     padding: 1px 4px;
     aspect-ratio: 1 / 1;
 }
 
-footer {
-    bottom: 0;
-    left: 0;
+.header-buttons-bar {
+    height: 20px;
+    padding: 1px 4px;
     flex: 1;
-    height: calc(var(--header-height) - 4px);
+}
+
+
+/*==========[ WEBSITE-WIDE CLASSES ]==========*/
+
+.outset {
+    border-style: outset;
+    border-color: var(--color-hl) var(--color-fg) var(--color-fg) var(--color-hl);
+    border-width: 2.5px;
     background-color: var(--color-fg);
 }
 
-main {
-    margin-top: var(--header-height);
-    min-height: calc(calc(100vh - calc(2 * var(--header-height))) - 1px);
-    width: 100%;
-    background-image: url(../images/noise_bg.svg);
-    /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"><defs><filter id="noise" x="0" y="0"><feTurbulence baseFrequency="0.000175" numOctaves="8" type="fractalNoise" seed="var(--noise-seed)" in="SourceGraphic" result="noisy"><!-- <animate attributeName="seed" values="1;31" dur="15s" repeatCount="indefinite"></animate> --></feTurbulence><feDiffuseLighting lighting-color="var(--color-fg)" surfaceScale="500" in="noisy" result="noiseImage"><feDistantLight elevation="75" /></feDiffuseLighting><feComponentTransfer in="noiseImage" result="postImage"><!-- <feFuncR type="discrete" tableValues="0.478 0.768 0.870" /> --><feFuncR type="discrete" tableValues="0.768 0.870" /><!-- <feFuncG type="discrete" tableValues="0.517 0.788 0.894" /> --><feFuncG type="discrete" tableValues="0.788 0.894" /><!-- <feFuncB type="discrete" tableValues="0.549 0.803 0.909" /> --><feFuncB type="discrete" tableValues="0.803 0.909" /></feComponentTransfer><!-- <feGaussianBlur stdDeviation="0.35" in="postImage" result="smoothed" /> --></filter><feDisplacementMap in="SourceGraphic" scale="1"></feDisplacementMap></defs><rect width="100%" height="100%" filter="url(%23noise)"></rect></svg>'); */
-    /* Both don't do anything in laptop chrome */
-    background-position: center;
-    background-size: cover;
+.inset {
+    border-style: inset;
+    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+    border-width: 2.5px;
+    background-color: var(--color-fg);
 }
 
 .text-contents {
@@ -111,6 +116,41 @@ main {
     text-justify: auto;
 }
 
+.window {
+    max-width: 80vw;
+    min-height: 80vh;
+    margin: auto;
+    padding: 15px;
+    color: var(--color-text);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    backdrop-filter: blur(2px);
+    background-color: rgb(0.3, 0.3, 0.3, 0.3);
+}
+
+.window-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.window-text {
+    font-size: var(--std-font-size);
+    margin-top: 10px;
+}
 
 .img-64x64 {
     height: 256px;
@@ -118,4 +158,83 @@ main {
     image-rendering: pixelated;
     position: absolute;
     z-index: -1;
+}
+
+/*==========[ GUESTBOOK PAGE ]==========*/
+
+.guestbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+    .guestbook-grid {
+        grid-template-columns: 1fr;
+    }
+    .guestbook-form {
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--color-sh);
+    }
+}
+
+.guestbook-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--color-text);
+}
+
+.guestbook-input > .msg {
+    padding: 5px;
+    min-height: 150px;
+}
+
+.guestbook-input > .name {
+    padding: 5px;
+}
+
+.guestbook-input > div:focus {
+    outline: none;
+}
+
+.guestbook-messages {
+    width: 100%;
+    background-color: blue;
+}
+
+
+/*==========[ SUDOKU PROJECT ]==========*/
+
+.sudoku-grid, .sudoku-nine {
+    gap: 2px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background-color: var(--color-fg);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text);
+}
+
+.sudoku-grid {
+    display: none;
+}
+
+.sudoku-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    aspect-ratio: 1 / 1;
+}
+
+.sudoku-nr {
+    /* font-size: var(--std-font-size); */
+    font-size: 17px;
+    font-weight: bold;
 }

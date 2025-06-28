@@ -9,6 +9,119 @@
         <link rel="stylesheet" type="text/css" href="./static/styles/projects.css?4">
     </head>
 
+    <div class="overlay" id="overlay_">
+        <div class="outset window">
+            <div class="window-top">
+                <div class="window-title" id="window-title">Title</div>
+                <div class="outset base-button exit" onclick="disableOverlay()">X</div>
+            </div>
+            <div class="window-text" id="window-text">Text</div>
+            <div class="window-content">
+                <div class="outset sudoku-grid">
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,2, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,2, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,2, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,2, this)"><div class="sudoku-nr">3</div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,2, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,2, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,0, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,1, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,2, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,2, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,2, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,4, this)"><div class="sudoku-nr">2</div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,5, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,5, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,5, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,5, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,5, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,5, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,3, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,4, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,5, this)"><div class="sudoku-nr">1</div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,5, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,5, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,8, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,6, this)"><div class="sudoku-nr">1</div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,8, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                    <div class="sudoku-nine">
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,6, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,7, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,8, this)"><div class="sudoku-nr"></div></div>
+                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,8, this)"><div class="sudoku-nr"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <body>
         <header>
             <div class="header-bar">
@@ -53,18 +166,19 @@
             </div>
 
             <div class="grid">
-                <div class="outset grid-item decal">
+                <div class="outset grid-item">
                     <div class="grid-item-top">
                         <div class="inset grid-item-title">
-                            A personal website
+                            Project 1: a personal website
                         </div>
                         <div class="outset grid-item-progress todo"></div>
                     </div>
                     <div class="inset grid-item-info">
-                        This project consists of making a website via Github Pages (yes, 
-                        this website) to show projects that I am working on, among other things.
+                        A website via Github Pages (yes, this website) to show projects 
+                        that I am working on. In the future, this website will also contain 
+                        a blog and a guestbook, among other things.
                     </div>
-                    <div class="outset base-button project">
+                    <div class="outset base-button project" onclick="enableOverlay(1)">
                         <div class="button-text">
                             View project
                         </div>
@@ -74,14 +188,14 @@
                 <div class="outset grid-item">
                     <div class="grid-item-top">
                         <div class="inset grid-item-title">
-                            Sudoku puzzle generator
+                            Project 2: Sudoku puzzle generator
                         </div>
                         <div class="outset grid-item-progress todo"></div>
                     </div>
                     <div class="inset grid-item-info">
                         ...
                     </div>
-                    <div class="outset base-button project">
+                    <div class="outset base-button project" onclick="enableOverlay(2)">
                         <div class="button-text">
                             View project
                         </div>
@@ -179,5 +293,50 @@
     </body>
 
     <script>
+        let overlay = document.getElementById('overlay_');
+        console.log(overlay);
+
+        function enableOverlay(project) {
+            overlay_.style.display = "block";
+            var overlayTitle = `Project ${project}: `;
+            var overlayText = "";
+            switch (project) {
+                case 1: /* Personal Website */
+                    overlayTitle += "a personal website";
+                    overlayText = "The goal of this project was to create a website via Github Pages to show (and host) \
+                        projects that I make. I am currently busy making the actual website, but it already contains a (still \
+                        not working) sudoku game. ";
+                    break;
+                case 2: /* Sudoku */
+                    overlayTitle += "Sudoku";
+                    overlayText = "For this project, I am making the game of Sudoku via Javascript. The goal of the project \
+                        is to have a playable version of Sudoku where games are automatically generated to play, and you can \
+                        check whether you completed the puzzle succesfully. ";
+                    overlay.getElementsByClassName('sudoku-grid')[0].style.display = "grid";
+            }
+            overlay.querySelector('#window-title').innerHTML = overlayTitle;
+            overlay.querySelector('#window-text').innerHTML = overlayText;
+        }
+
+        function disableOverlay() {
+            overlay.style.display = 'none';
+            overlay.getElementsByClassName('sudoku-grid')[0].style.display = 'none';
+        }
+
+
+        // SUDOKU FUNCTIONALITY
+        var selectedField;
+        function sudokuClick(block, x, y, el) {
+            if(el.selected != 'true') {
+                // SELECT
+                el.style.backgroundColor = 'black';
+                el.selected = 'true';
+            }
+            else {
+                // DESELECT
+                el.style.backgroundColor = 'inherit';
+                el.selected = 'false';
+            }
+        }
     </script>
 </html>

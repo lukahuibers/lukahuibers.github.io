@@ -48,11 +48,44 @@
             <div class="text-contents">
                 <p>Guestbook... TODO</p>
             </div>
+            <div class="outset window guestbook-grid">
+                <div class="guestbook-form">
+                    <div class="guestbook-input">
+                        <p>Leave a message:</p>
+                        <div class="inset msg" contenteditable="true">
+                            Message
+                        </div>
+                        <p>And sign it with your (made up) name:</p>
+                        <div class="inset name" contenteditable="true">
+                            Name
+                        </div>
+                    </div>
+                    <div class="outset base-button guestbook-submit">
+                        <div class="button-text">
+                            Submit
+                        </div>
+                    </div>
+                </div>
+                <div class="guestbook-messages">
+                    Messages.
+                </div>
+            </div>
         </main>
 
         <footer class="outset"></footer>
     </body>
 
     <script>
+        var fakeFirstnames = ['Mr', 'Ms', 'Joe', 'Vin', 'Harry', 'Banana', 'Hot', 'Spicy', 'Broken', 'Metal', 'Nuclear', 'Strong', 'Dr', 'Prof', 'Enormous', 'Undefined', 'Family'];
+        var fakeLastnames = ['Johnson', 'Thermometer', 'Windowpane', 'EngineBlock', 'ComputerScreen', 'Fighter', 'Doctor', 'Hater', 'Sheep', 'BlueWhale', 'Guy'];
+        var nameAddition = Math.ceil(Math.random() * 475);
+
+        var fnChoice = Math.min(Math.max(Math.floor(Math.random()*(fakeFirstnames.length)), 0), fakeFirstnames.length-1);
+        var lnChoice = Math.min(Math.max(Math.floor(Math.random()*(fakeLastnames.length)), 0), fakeLastnames.length-1);
+    
+        var name = fakeFirstnames[fnChoice] + fakeLastnames[lnChoice] + nameAddition;
+        // console.log(fnChoice + '/' + fakeFirstnames.length + ', ' + lnChoice + '/' + fakeLastnames.length);
+        
+        document.getElementsByClassName('name')[0].innerHTML = name;
     </script>
 </html>
