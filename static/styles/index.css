@@ -1,6 +1,6 @@
 :root {
     /* Structural variables */
-    --header-height: 85px;
+    --header-height: 58px;
     --std-font-size: 15px;
     /* Colour variables */
     --color-fg: #c4c9cd; /* Foreground */
@@ -30,13 +30,26 @@ body {
 
 main {
     margin-top: var(--header-height);
-    min-height: calc(calc(100vh - calc(2 * var(--header-height))) - 1px);
+    min-height: calc(calc(100vh - var(--header-height)) - 1px);
     width: 100%;
     background-image: url(../images/noise_bg.svg);
     /* background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"><defs><filter id="noise" x="0" y="0"><feTurbulence baseFrequency="0.000175" numOctaves="8" type="fractalNoise" seed="var(--noise-seed)" in="SourceGraphic" result="noisy"><!-- <animate attributeName="seed" values="1;31" dur="15s" repeatCount="indefinite"></animate> --></feTurbulence><feDiffuseLighting lighting-color="var(--color-fg)" surfaceScale="500" in="noisy" result="noiseImage"><feDistantLight elevation="75" /></feDiffuseLighting><feComponentTransfer in="noiseImage" result="postImage"><!-- <feFuncR type="discrete" tableValues="0.478 0.768 0.870" /> --><feFuncR type="discrete" tableValues="0.768 0.870" /><!-- <feFuncG type="discrete" tableValues="0.517 0.788 0.894" /> --><feFuncG type="discrete" tableValues="0.788 0.894" /><!-- <feFuncB type="discrete" tableValues="0.549 0.803 0.909" /> --><feFuncB type="discrete" tableValues="0.803 0.909" /></feComponentTransfer><!-- <feGaussianBlur stdDeviation="0.35" in="postImage" result="smoothed" /> --></filter><feDisplacementMap in="SourceGraphic" scale="1"></feDisplacementMap></defs><rect width="100%" height="100%" filter="url(%23noise)"></rect></svg>'); */
     /* Both don't do anything in laptop chrome */
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
+
+    display: grid;
+    grid-template: 2fr 1fr / 1fr 2fr;
+    /* gap: 10px; */
+    /* padding: 10px; */
+    box-sizing: border-box;
+    border: 5px solid #eff2f4;
+}
+
+.main-grid-item {
+    border: 5px solid #eff2f4;
+    /* border-width: 5px; */
+    /* border-color: var(--color-bg); */
 }
 
 footer {
@@ -52,10 +65,10 @@ footer {
 
 header {
     position: fixed;
+    height: var(--header-height);
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
     background-color: var(--color-fg);
     display: flex;
     flex-direction: column;
@@ -64,11 +77,9 @@ header {
 
 .header-bar {
     padding: 8px;
-    height: 50px;
     /* text-overflow: clip; */
     text-wrap-mode: nowrap;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: var(--std-font-size);
     color: var(--color-text);
 
     overflow: hidden;
