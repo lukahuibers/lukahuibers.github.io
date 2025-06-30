@@ -34,7 +34,7 @@
 }
 
 .grid-item-title {
-    height: 40px;
+    box-sizing: border-box;
     width: 100%;
     border-style: inset;
     padding: 5px;
