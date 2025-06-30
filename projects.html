@@ -17,7 +17,7 @@
             </div>
             <div class="window-text" id="window-text">Text</div>
             <div class="window-content">
-                <div class="outset sudoku-grid">
+                <div class="sudoku-grid">
                     <div class="sudoku-nine">
                         <div class="inset sudoku-field" onclick="sudokuClick(0, 0,0, this)"><div class="sudoku-nr"></div></div>
                         <div class="inset sudoku-field" onclick="sudokuClick(0, 1,0, this)"><div class="sudoku-nr"></div></div>
@@ -180,10 +180,12 @@
                             </div>
                             <div class="outset grid-item-progress todo"></div>
                         </div>
-                        <div class="inset grid-item-info">
-                            A website via Github Pages (yes, this website) to show projects 
-                            that I am working on. In the future, this website will also contain 
-                            a blog and a guestbook, among other things.
+                        <div class="inset grid-item-info-border">
+                            <div class="grid-item-info doto-lcd-font">
+                                A website via Github Pages (yes, this website) to show projects 
+                                that I am working on. In the future, this website will also contain 
+                                a blog and a guestbook, among other things.
+                            </div>
                         </div>
                         <div class="outset base-button project" onclick="enableOverlay(1)">
                             <div class="button-text">
@@ -199,8 +201,10 @@
                             </div>
                             <div class="outset grid-item-progress todo"></div>
                         </div>
-                        <div class="inset grid-item-info">
-                            ...
+                        <div class="inset grid-item-info-border">
+                            <div class="grid-item-info doto-lcd-font">
+                                ...
+                            </div>
                         </div>
                         <div class="outset base-button project" onclick="enableOverlay(2)">
                             <div class="button-text">
@@ -209,22 +213,24 @@
                         </div>
                     </div>
     
-                    <!-- <div class="outset grid-item">
+                    <div class="outset grid-item">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 TITLE
                             </div>
                             <div class="outset grid-item-progress concept"></div>
                         </div>
-                        <div class="inset grid-item-info">
-                            INFO
+                        <div class="inset grid-item-info-border">
+                            <div class="grid-item-info doto-lcd-font">
+                                INFO
+                            </div>
                         </div>
                         <div class="outset base-button project">
                             <div class="button-text">
                                 View project
                             </div>
                         </div>
-                    </div> -->
+                    </div>
     
                 </div>
             </div>
@@ -237,8 +243,6 @@
 
     <script>
         let overlay = document.getElementById('overlay_');
-        console.log(overlay);
-
         function enableOverlay(project) {
             overlay_.style.display = "block";
             var overlayTitle = `Project ${project}: `;
@@ -277,9 +281,30 @@
             }
             else {
                 // DESELECT
-                el.style.backgroundColor = 'inherit';
+                el.style.backgroundColor = 'var(--color-bg)';
                 el.selected = 'false';
             }
+        }
+
+        function animateText(el){
+            let elementText = el.innerText;
+            el.innerText = "";
+
+            const textLength = elementText.length;
+            let i = 0;
+            const writter = setInterval(() => {
+                if ( i === textLength+1 ) {
+                    clearInterval(writter);
+                } else {
+                    el.innerText = elementText.substring(0, i++);
+                }
+            }, 20)
+        }
+
+        var lcdTexts = document.getElementsByClassName("grid-item-info");
+        for (let i = 0; i < lcdTexts.length; i++) {
+            let el = lcdTexts[i];
+            animateText(el);
         }
     </script>
 </html>

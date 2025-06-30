@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@800&display=swap');
+
 :root {
     /* Structural variables */
     --header-height: 58px;
     --std-font-size: 15px;
     /* Colour variables */
-    --color-fg: #c4c9cd; /* Foreground */
+    --color-fg: #dee4e8; /* Foreground */
+    --color-in: #c7cbce; /* Indents */
     --color-sh: #7a848c; /* Shadow */
-    --color-bg: #dee4e8; /* Background */
-    --color-hl: #f2fdfb; /* Highlights */
+    --color-bg: #eff2f4; /* Background */
+    --color-hl: #F7F9F9; /* Highlights */
     --color-text: #0B032D; /* Text */
+    --color-outline: #30383e;
+    --color-outline2: #525a5f;
+    --color-hd: #4a3d7c; /* Header */
+    --color-hd: #62528D;
 
     --magenta: #843B62;
     --eggplant: #74546A;
@@ -15,6 +22,16 @@
 
 * {
     font-family: 'Lucida Console', Courier, monospace;
+}
+
+
+.doto-lcd-font {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
 }
 
 
@@ -43,11 +60,22 @@ main {
     /* gap: 10px; */
     /* padding: 10px; */
     box-sizing: border-box;
-    border: 5px solid #eff2f4;
+    border: 5px solid var(--color-bg);
+}
+
+@media only screen and (max-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        /* grid-template: repeat(4, 1fr) / 1fr; */
+    }
+    .main-grid-item {
+        /* height: fit-content; */
+    }
 }
 
 .main-grid-item {
-    border: 5px solid #eff2f4;
+    border: 5px solid var(--color-bg);
     /* border-width: 5px; */
     /* border-color: var(--color-bg); */
 }
@@ -69,7 +97,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-fg);
+    z-index: 2;
+    background-color: var(--color-hd);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,7 +109,8 @@ header {
     /* text-overflow: clip; */
     text-wrap-mode: nowrap;
     font-size: var(--std-font-size);
-    color: var(--color-text);
+    /* color: var(--color-text); */
+    color: var(--color-fg);
 
     overflow: hidden;
 }
@@ -91,15 +121,13 @@ header {
 }
 
 .header-buttons-bar-small {
-    height: 20px;
-    padding: 1px 4px;
+    height: 26px;
     aspect-ratio: 1 / 1;
 }
 
 .header-buttons-bar {
-    height: 20px;
-    padding: 1px 4px;
-    flex: 1;
+    height: 26px;
+    flex-grow: 1;
 }
 
 
@@ -108,15 +136,21 @@ header {
 .outset {
     border-style: outset;
     border-color: var(--color-hl) var(--color-fg) var(--color-fg) var(--color-hl);
-    border-width: 2.5px;
+    border-width: 4px;
     background-color: var(--color-fg);
+    outline: 2px solid var(--color-outline);
+    margin: 1px;
+    box-sizing: border-box;
 }
 
 .inset {
     border-style: inset;
     border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
-    border-width: 2.5px;
+    border-width: 4px;
     background-color: var(--color-fg);
+    /* outline: 2px solid var(--color-outline); */
+    /* margin: 1px; */
+    box-sizing: border-box;
 }
 
 .text-contents {
@@ -207,7 +241,7 @@ header {
 }
 
 .guestbook-input > div:focus {
-    outline: none;
+    outline: 2px solid var(--color-outline);
 }
 
 .guestbook-messages {
@@ -219,24 +253,32 @@ header {
 /*==========[ SUDOKU PROJECT ]==========*/
 
 .sudoku-grid, .sudoku-nine {
-    gap: 2px;
     width: fit-content;
     height: fit-content;
-    margin: auto;
-    background-color: var(--color-fg);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    justify-content: center;
-    align-items: center;
     color: var(--color-text);
 }
 
 .sudoku-grid {
+    margin: auto;
     display: none;
+    gap: 4px;
+    background-color: var(--color-outline);
+    outline: 4px solid var(--color-outline);
+}
+
+.sudoku-nine {
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 3px;
+    background-color: var(--color-outline);
 }
 
 .sudoku-field {
+    border-width: 0px;
+    background-color: var(--color-bg);
     display: flex;
     justify-content: center;
     align-items: center;

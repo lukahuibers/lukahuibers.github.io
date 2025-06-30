@@ -4,23 +4,38 @@
     align-content: center;
     text-decoration: none;
     color: var(--color-text);
+    box-sizing: border-box;
+    /* outline: 2px solid var(--color-outline); */
+    transition: border-color 0.8s;
+}
+
+.base-button .button-text {
+    transition: transform 0.1s;
+    transform:translateY(-1px);
 }
 
 .base-button:hover:not(.selected) {
     cursor: pointer;
-    border-style: inset;
-    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+    /* border-style: inset; */
+    border-style: solid;
+    /* border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg); */
+    border-color: var(--color-hl);
 }
 
-.base-button:hover .button-text {
-    transform: translateY(1px);
+.base-button:hover:not(.selected) .button-text {
+    transform:translateY(1px);
+    text-decoration: underline;
 }
 
 .base-button.selected {
     border-style: inset;
-    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
-    transform: translateY(1px);
+    /* border-color: var(--color-in) var(--color-fg) var(--color-fg) var(--color-in); */
     cursor: default;
+    background-color: var(--color-in);
+}
+
+.base-button.selected .button-text {
+    transform:translateY(1px);
 }
 
 .base-button.medium {
@@ -31,10 +46,9 @@
 }
 
 .base-button.small {
-    height: 20px;
+    height: 26px;
     font-size: var(--std-font-size);
-    padding: 1px 0;
-    width: 98px;
+    width: 104px;
 }
 
 .base-button.exit {
