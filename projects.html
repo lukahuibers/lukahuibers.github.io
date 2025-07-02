@@ -168,12 +168,18 @@
                         The colour of the top right block on each project indicates the progress or 
                         state of the project. Green represents it is finished, orange represents it 
                         is currently being worked on, and red represents that it only yet exists as 
-                        a concept. </p>    
+                        a concept. </p>
+                    <p>Go to <a href="#project1">Project 1</a>, 
+                        <a href="#project2">Project 2</a>, 
+                        <a href="#project3">Project 3</a>, 
+                        <a href="#project4">Project 4</a>,
+                        <a href="#project5">Project 5</a>
+                    </p>
                 </div>
             </div>
             <div class="main-grid-item">
                 <div class="grid">
-                    <div class="outset grid-item">
+                    <div class="outset grid-item" id="project1">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 Project 1: a personal website
@@ -182,9 +188,9 @@
                         </div>
                         <div class="inset grid-item-info-border">
                             <div class="grid-item-info doto-lcd-font">
-                                A website via Github Pages (yes, this website) to show projects 
-                                that I am working on. In the future, this website will also contain 
-                                a blog and a guestbook, among other things.
+                                SA website via Github Pages (yes, this website) to show projects 
+                                Sthat I am working on. In the future, this website will also contain 
+                                Sa blog and a guestbook, among other things.
                             </div>
                         </div>
                         <div class="outset base-button project" onclick="enableOverlay(1)">
@@ -194,7 +200,7 @@
                         </div>
                     </div>
     
-                    <div class="outset grid-item">
+                    <div class="outset grid-item" id="project2">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 Project 2: Sudoku puzzle generator
@@ -203,7 +209,7 @@
                         </div>
                         <div class="inset grid-item-info-border">
                             <div class="grid-item-info doto-lcd-font">
-                                ...
+                                S...
                             </div>
                         </div>
                         <div class="outset base-button project" onclick="enableOverlay(2)">
@@ -213,7 +219,7 @@
                         </div>
                     </div>
     
-                    <div class="outset grid-item">
+                    <div class="outset grid-item" id="project3">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 TITLE
@@ -221,8 +227,7 @@
                             <div class="outset grid-item-progress concept"></div>
                         </div>
                         <div class="inset grid-item-info-border">
-                            <div class="grid-item-info doto-lcd-font">
-                                INFO
+                            <div class="grid-item-info-animate doto-lcd-font">
                             </div>
                         </div>
                         <div class="outset base-button project">
@@ -232,7 +237,7 @@
                         </div>
                     </div>
 
-                    <div class="outset grid-item">
+                    <div class="outset grid-item" id="project4">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 TITLE
@@ -241,7 +246,7 @@
                         </div>
                         <div class="inset grid-item-info-border">
                             <div class="grid-item-info doto-lcd-font">
-                                INFO
+                                SINFO
                             </div>
                         </div>
                         <div class="outset base-button project">
@@ -251,7 +256,7 @@
                         </div>
                     </div>
 
-                    <div class="outset grid-item">
+                    <div class="outset grid-item" id="project5">
                         <div class="grid-item-top">
                             <div class="inset grid-item-title">
                                 TITLE
@@ -260,7 +265,7 @@
                         </div>
                         <div class="inset grid-item-info-border">
                             <div class="grid-item-info doto-lcd-font">
-                                INFO
+                                SINFO
                             </div>
                         </div>
                         <div class="outset base-button project">
@@ -324,9 +329,11 @@
             }
         }
 
-        function animateText(el){
-            let elementText = el.innerText;
-            el.innerText = "";
+        // LCD SCREENS FUNCTIONALITY
+        function writeText(el){
+            let elementText = el.innerHTML;
+            elementText = elementText.replace(/^\s+S|\n\s+S|\s+$/g, '').replace(/\\\s/g, '\n');
+            el.innerHTML = "";
 
             const textLength = elementText.length;
             let i = 0;
@@ -334,7 +341,7 @@
                 if ( i === textLength+1 ) {
                     clearInterval(writter);
                 } else {
-                    el.innerText = elementText.substring(0, i++);
+                    el.innerHTML = elementText.substring(0, i++);
                 }
             }, 20)
         }
@@ -342,7 +349,34 @@
         var lcdTexts = document.getElementsByClassName("grid-item-info");
         for (let i = 0; i < lcdTexts.length; i++) {
             let el = lcdTexts[i];
-            animateText(el);
+            writeText(el);
         }
+
+        const faceStates = [
+            " /--------\\ \n |        |\n | O    O |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | O    O |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | O    O |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | O    O |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | -    O |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | -    - |\n |        |\n | \\____/ |\n \\--------/",
+            " /--------\\ \n |        |\n | O    - |\n |        |\n | \\____/ |\n \\--------/",
+        ]
+
+        function animateFace(el) {
+            // let elementText = el.innerHTML;
+            // elementText = elementText.replace(/^\s+S|\n\s+S|\s+$/g, '').replace(/\\\s/g, '\n');
+            // el.innerHTML = elementText;
+
+            const faceStatesLength = faceStates.length;
+            let i = 0;
+            const writter = setInterval(() => {
+                // let text = 
+                el.innerHTML = faceStates[i];
+                i = (i+1) % faceStatesLength;
+            }, 200)
+        }
+
+        var lcdAnimate = document.getElementsByClassName("grid-item-info-animate")[0];
+        animateFace(lcdAnimate);
     </script>
 </html>

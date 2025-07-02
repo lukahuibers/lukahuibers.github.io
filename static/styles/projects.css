@@ -62,21 +62,63 @@
     margin: 0 15px;
 }
 
-.grid-item-info {
-    height: calc(21.5px * 6);
+.grid-item-info, .grid-item-info-animate {
+    min-height: calc(22px * 7);
     overflow: hidden;
 
-    background: #9cba7b;;
-    background-image: linear-gradient(#acca8a .1em, transparent .1em), linear-gradient(90deg, #acca8a .1em, transparent .1em);
-    background-size: 10.8px 21.5px;
-    background-position-x: -2px;
+    background: var(--lcd-dark);
+    background-image: linear-gradient(var(--lcd-light) .25em, transparent .1em), linear-gradient(90deg, var(--lcd-light) .1em, transparent .1em);
+    background-size: 10.8px 22px;
+    background-position: -2px -1px;
 
-    border-width: 10.75px 10.74px;
+    border-width: 5px;
     border-style: solid;
-    border-color: #acca8a;
+    border-color: var(--lcd-light);
 
     /* background-color: #9cba7b;  */
-    color: #132130;
+    color: var(--lcd-text);
     font-size: 18px;
+    white-space: pre-wrap;
+}
 
+/*==========[ SUDOKU PROJECT ]==========*/
+
+.sudoku-grid, .sudoku-nine {
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    color: var(--color-text);
+}
+
+.sudoku-grid {
+    margin: auto;
+    display: none;
+    gap: 3px;
+    background-color: var(--color-outline);
+    outline: 4px solid var(--color-outline);
+}
+
+.sudoku-nine {
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 2px;
+    background-color: var(--color-outline);
+}
+
+.sudoku-field {
+    border-width: 0px;
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    aspect-ratio: 1 / 1;
+}
+
+.sudoku-nr {
+    /* font-size: var(--std-font-size); */
+    font-size: 17px;
+    font-weight: bold;
 }

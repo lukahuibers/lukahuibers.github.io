@@ -1,73 +1,65 @@
+/* Standard button class */
 .base-button {
-    background-color: var(--color-fg);
     text-align: center;
     align-content: center;
     text-decoration: none;
-    color: var(--color-text);
-    box-sizing: border-box;
-    /* outline: 2px solid var(--color-outline); */
-    transition: border-color 0.8s;
-}
-
-.base-button .button-text {
-    transition: transform 0.1s;
-    transform:translateY(-1px);
-}
-
-.base-button:hover:not(.selected) {
     cursor: pointer;
-    /* border-style: inset; */
+    transition: border-color 0.8s;
+    .button-text {
+        transition: transform 0.1s;
+        transform: translateY(-1px);
+    };
+    /* Pushed down buttons */
+    &.selected {
+        border-style: inset;
+        border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+        cursor: default;
+        .button-text {
+            transform:translateY(1px);
+        }
+    };
+    /* Medium buttons */
+    &.medium {
+        height: 50px;
+        font-size: 40px;
+        padding: 2px 5px;
+        width: 150px;
+    };
+    /* Small buttons */
+    &.small {
+        height: 26px;
+        font-size: var(--std-font-size);
+        width: 104px;
+    };
+    /* Exit buttons (X) */
+    &.exit {
+        width: 25px;
+        aspect-ratio: 1 / 1;
+        font-size: 21px;
+    };
+    /* Project buttons (view project) */
+    &.project {
+        height: 35px;
+        font-size: var(--std-font-size);
+        padding: 0 5px;
+        margin: 0 15px;
+    };
+    /* Guestbook submit button */
+    &.guestbook-submit {
+        flex: 1;
+        max-height: 35px;
+        font-size: var(--std-font-size);
+        padding: 0 5px;
+        margin-top: auto;
+    };
+}
+
+/* Hover effect for (text of) buttons that are not already pushed */
+.base-button:hover:not(.selected) {
     border-style: solid;
-    /* border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg); */
     border-color: var(--color-hl);
-}
-
-.base-button:hover:not(.selected) .button-text {
-    transform:translateY(1px);
-    text-decoration: underline;
-}
-
-.base-button.selected {
-    border-style: inset;
-    /* border-color: var(--color-in) var(--color-fg) var(--color-fg) var(--color-in); */
-    cursor: default;
-    background-color: var(--color-in);
-}
-
-.base-button.selected .button-text {
-    transform:translateY(1px);
-}
-
-.base-button.medium {
-    height: 50px;
-    font-size: 40px;
-    padding: 2px 5px;
-    width: 150px;
-}
-
-.base-button.small {
-    height: 26px;
-    font-size: var(--std-font-size);
-    width: 104px;
-}
-
-.base-button.exit {
-    width: 25px;
-    aspect-ratio: 1 / 1;
-    font-size: 21px;
-}
-
-.base-button.project {
-    height: 35px;
-    font-size: var(--std-font-size);
-    padding: 0 5px;
-    margin: 0 15px;
-}
-
-.base-button.guestbook-submit {
-    flex: 1;
-    max-height: 35px;
-    font-size: var(--std-font-size);
-    padding: 0 5px;
-    margin-top: auto;
+    .button-text {
+        transform: translateY(1px);
+        text-decoration: underline;
+    }
 }
