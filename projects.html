@@ -4,142 +4,31 @@
         <title>My projects</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/index.css?4">
-        <link rel="stylesheet" type="text/css" href="./static/styles/buttons.css?4">
-        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css?4">
+        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css">
     </head>
 
-    <div class="overlay" id="overlay_">
-        <div class="outset window">
-            <div class="window-top">
-                <div class="window-title" id="window-title">Title</div>
-                <div class="outset base-button exit" onclick="disableOverlay()">X</div>
-            </div>
-            <div class="window-text" id="window-text">Text</div>
-            <div class="window-content">
-                <div class="sudoku-grid">
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 0,2, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 1,2, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(0, 2,2, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 3,2, this)"><div class="sudoku-nr">3</div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 4,2, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(1, 5,2, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,0, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,1, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 6,2, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 7,2, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(2, 8,2, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,4, this)"><div class="sudoku-nr">2</div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 0,5, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 1,5, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(3, 2,5, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 3,5, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 4,5, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(4, 5,5, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,3, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,4, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 6,5, this)"><div class="sudoku-nr">1</div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 7,5, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(5, 8,5, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 0,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 1,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(6, 2,8, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,6, this)"><div class="sudoku-nr">1</div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 3,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 4,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(7, 5,8, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                    <div class="sudoku-nine">
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,6, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,7, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 6,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 7,8, this)"><div class="sudoku-nr"></div></div>
-                        <div class="inset sudoku-field" onclick="sudokuClick(8, 8,8, this)"><div class="sudoku-nr"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <body>
         <header>
-            <div class="header-bar">
+            <div class="header-text">
                 Luka Huibers /// HappyHoLuka
             </div>
             <div class="header-buttons">
-                <div class="outset header-buttons-bar-small"></div>
+                <div class="outset header-infil-left"></div>
                 <a class="outset base-button small" href="./index.html">
                     <div class="button-text">
                         Home
                     </div>
                 </a>
-                <div class="outset base-button small selected">    
-                    Projects
+                <div class="outset base-button small selected">
+                    <div class="button-text">    
+                        Projects
+                    </div>
                 </div>
                 <a class="outset base-button small" href="./about.html">
                     <div class="button-text">
-                        About me
+                        About
                     </div>
                 </a>
                 <a class="outset base-button small" href="./blog.html">
@@ -152,133 +41,230 @@
                         Guestbook
                     </div>
                 </a>
-                <a class="outset base-button small" href="./reach_zero.html">
-                    <div class="button-text">
-                        Reach zero
-                    </div>
-                </a>
-                <div class="outset header-buttons-bar"></div>
+                <div class="outset header-infil-right"></div>
             </div>
         </header>
+        
+        <div class="overlay" id="overlay_">
+            <div class="outset window">
+                <div class="window-top">
+                    <div class="window-title" id="window-title">Title</div>
+                    <a class="outset base-button exit" href="#">X</a>
+                </div>
+                <div class="window-text" id="window-text">Text</div>
+                <div class="window-content">
+                    <div class="sudoku-grid">
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 0,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 1,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 2,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 0,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 1,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 2,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 0,2, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 1,2, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(0, 2,2, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 3,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 4,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 5,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 3,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 4,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 5,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 3,2, this)"><div class="sudoku-nr">3</div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 4,2, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(1, 5,2, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 6,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 7,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 8,0, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 6,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 7,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 8,1, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 6,2, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 7,2, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(2, 8,2, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 0,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 1,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 2,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 0,4, this)"><div class="sudoku-nr">2</div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 1,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 2,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 0,5, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 1,5, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(3, 2,5, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 3,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 4,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 5,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 3,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 4,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 5,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 3,5, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 4,5, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(4, 5,5, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 6,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 7,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 8,3, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 6,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 7,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 8,4, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 6,5, this)"><div class="sudoku-nr">1</div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 7,5, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(5, 8,5, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 0,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 1,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 2,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 0,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 1,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 2,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 0,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 1,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(6, 2,8, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 3,6, this)"><div class="sudoku-nr">1</div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 4,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 5,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 3,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 4,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 5,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 3,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 4,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(7, 5,8, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                        <div class="sudoku-nine">
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 6,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 7,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 8,6, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 6,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 7,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 8,7, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 6,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 7,8, this)"><div class="sudoku-nr"></div></div>
+                            <div class="inset sudoku-field" onclick="sudokuClick(8, 8,8, this)"><div class="sudoku-nr"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <main>
-            <div class="main-grid-item">
-                <div class="text-contents">
-                    <p>These are the projects I am working on or have worked on in the past. 
-                        The colour of the top right block on each project indicates the progress or 
-                        state of the project. Green represents it is finished, orange represents it 
-                        is currently being worked on, and red represents that it only yet exists as 
-                        a concept. </p>
-                    <p>Go to <a href="#project1">Project 1</a>, 
-                        <a href="#project2">Project 2</a>, 
-                        <a href="#project3">Project 3</a>, 
-                        <a href="#project4">Project 4</a>,
-                        <a href="#project5">Project 5</a>
-                    </p>
-                </div>
+            <div class="text-contents">
+                <p>These are the projects I am working on or have worked on in the past. 
+                    The colour of the top right block on each project indicates the progress or 
+                    state of the project. Green represents it is finished, orange represents it 
+                    is currently being worked on, and red represents that it only yet exists as 
+                    a concept. </p>
             </div>
-            <div class="main-grid-item">
-                <div class="grid">
-                    <div class="outset grid-item" id="project1">
-                        <div class="grid-item-top">
-                            <div class="inset grid-item-title">
-                                Project 1: a personal website
-                            </div>
-                            <div class="outset grid-item-progress todo"></div>
+            
+            <div class="grid-projects">
+                <div class="outset project" id="1">
+                    <!-- <div id="1"></div> -->
+                    <div class="project-top">
+                        <div class="inset project-title">
+                            Project 1: a personal website
                         </div>
-                        <div class="inset grid-item-info-border">
-                            <div class="grid-item-info doto-lcd-font">
-                                SA website via Github Pages (yes, this website) to show projects 
-                                Sthat I am working on. In the future, this website will also contain 
-                                Sa blog and a guestbook, among other things.
-                            </div>
-                        </div>
-                        <a class="outset base-button project" href="#project1">
-                            <div class="button-text">
-                                View project
-                            </div>
-                        </a>
+                        <div class="outset project-progress todo"></div>
                     </div>
-    
-                    <div class="outset grid-item" id="project2">
-                        <div class="grid-item-top">
-                            <div class="inset grid-item-title">
-                                Project 2: Sudoku puzzle generator
-                            </div>
-                            <div class="outset grid-item-progress todo"></div>
+                    <div class="inset">
+                        <div class="project-info doto-lcd-font">
+                            SA website via Github Pages (yes, this website) to show projects 
+                            Sthat I am working on. In the future, this website will also contain 
+                            Sa blog and a guestbook, among other things.
                         </div>
-                        <div class="inset grid-item-info-border">
-                            <div class="grid-item-info doto-lcd-font">
-                                S...
-                            </div>
-                        </div>
-                        <a class="outset base-button project" href="#project2">
-                            <div class="button-text">
-                                View project
-                            </div>
-                        </a>
                     </div>
-    
-                    <div class="outset grid-item" id="project3">
-                        <div class="grid-item-top">
-                            <div class="inset grid-item-title">
-                                TITLE
-                            </div>
-                            <div class="outset grid-item-progress concept"></div>
+                    <a class="outset base-button project" href="#1">
+                        <div class="button-text">
+                            View project
                         </div>
-                        <div class="inset grid-item-info-border">
-                            <div class="grid-item-info-animate doto-lcd-font">
-                            </div>
-                        </div>
-                        <a class="outset base-button project" href="#project3">
-                            <div class="button-text">
-                                View project
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="outset grid-item" id="project4">
-                        <div class="grid-item-top">
-                            <div class="inset grid-item-title">
-                                TITLE
-                            </div>
-                            <div class="outset grid-item-progress concept"></div>
-                        </div>
-                        <div class="inset grid-item-info-border">
-                            <div class="grid-item-info doto-lcd-font">
-                                SINFO
-                            </div>
-                        </div>
-                        <a class="outset base-button project" href="project4">
-                            <div class="button-text">
-                                View project
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="outset grid-item" id="project5">
-                        <div class="grid-item-top">
-                            <div class="inset grid-item-title">
-                                TITLE
-                            </div>
-                            <div class="outset grid-item-progress concept"></div>
-                        </div>
-                        <div class="inset grid-item-info-border">
-                            <div class="grid-item-info doto-lcd-font">
-                                SINFO
-                            </div>
-                        </div>
-                        <a class="outset base-button project" href="#project5">
-                            <div class="button-text">
-                                View project
-                            </div>
-                        </a>
-                    </div>
-    
+                    </a>
                 </div>
+    
+                <div class="outset project" id="2">
+                    <div class="project-top">
+                        <div class="inset project-title">
+                            Project 2: Sudoku puzzle generator
+                        </div>
+                        <div class="outset project-progress todo"></div>
+                    </div>
+                    <div class="inset">
+                        <div class="project-info doto-lcd-font">
+                            S...
+                        </div>
+                    </div>
+                    <a class="outset base-button project" href="#2">
+                        <div class="button-text">
+                            View project
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="outset project" id="3">
+                    <div class="project-top">
+                        <div class="inset project-title">
+                            TITLE
+                        </div>
+                        <div class="outset project-progress concept"></div>
+                    </div>
+                    <div class="inset">
+                        <div class="project-info-animate doto-lcd-font">
+                        </div>
+                    </div>
+                    <a class="outset base-button project" href="#3">
+                        <div class="button-text">
+                            View project
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <div class="outset project" id="4">
+                    <div class="project-top">
+                        <div class="inset project-title">
+                            TITLE
+                        </div>
+                        <div class="outset project-progress concept"></div>
+                    </div>
+                    <div class="inset">
+                        <div class="project-info doto-lcd-font">
+                            SINFO
+                        </div>
+                    </div>
+                    <a class="outset base-button project" href="#4">
+                        <div class="button-text">
+                            View project
+                        </div>
+                    </a>
+                </div> -->
+
+                <!-- <div class="outset project" id="5">
+                    <div class="project-top">
+                        <div class="inset project-title">
+                            TITLE
+                        </div>
+                        <div class="outset project-progress concept"></div>
+                    </div>
+                    <div class="inset">
+                        <div class="project-info doto-lcd-font">
+                            SINFO
+                        </div>
+                    </div>
+                    <a class="outset base-button project" href="#5">
+                        <div class="button-text">
+                            View project
+                        </div>
+                    </a>
+                </div> -->
             </div>
-            <!-- <div class="main-grid-item"></div> -->
-            <!-- <div class="main-grid-item"></div> -->
         </main>
 
         <!-- <footer class="outset"></footer> -->
@@ -310,11 +296,13 @@
             }
             overlay.querySelector('#window-title').innerHTML = overlayTitle;
             overlay.querySelector('#window-text').innerHTML = overlayText;
+            document.getElementsByTagName('main')[0].style.display = 'none';
         }
 
         function disableOverlay() {
             overlay.style.display = 'none';
             overlay.getElementsByClassName('sudoku-grid')[0].style.display = 'none';
+            document.getElementsByTagName('main')[0].style.display = 'grid';
         }
 
         
@@ -325,6 +313,8 @@
             if (project) {
                 var projectNr = project.substring(project.length-1, project.length);
                 enableOverlay(projectNr);
+            } else {
+                disableOverlay();
             }
         })
         var project = document.URL.split('#')[1];
@@ -366,7 +356,7 @@
             }, 20)
         }
 
-        var lcdTexts = document.getElementsByClassName("grid-item-info");
+        var lcdTexts = document.getElementsByClassName("project-info");
         for (let i = 0; i < lcdTexts.length; i++) {
             let el = lcdTexts[i];
             writeText(el);
@@ -392,7 +382,7 @@
             }, 200)
         }
 
-        var lcdAnimate = document.getElementsByClassName("grid-item-info-animate")[0];
+        var lcdAnimate = document.getElementsByClassName("project-info-animate")[0];
         animateFace(lcdAnimate);
     </script>
 </html>

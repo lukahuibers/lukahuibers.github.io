@@ -4,15 +4,15 @@
         <title>Reach zero</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/index.css?4">
-        <link rel="stylesheet" type="text/css" href="./static/styles/buttons.css?4">
+        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css">
     </head>
 
     <div class="overlay"></div>
 
     <body>
         <header>
-            <div class="header-bar">Reach zero</div>
+            <div class="header-text">Reach zero</div>
             <div class="header-buttons">
                 <div class="outset header-buttons-bar-small"></div>
                 <a class="outset base-button small" href="./index.html">
@@ -25,22 +25,17 @@
         </header>
 
         <main>
-            <div class="main-grid-item"></div>
-            <div class="main-grid-item">
-                <div class="outset window reach-one-window">
-                    <div class="reach-one-reset">
-                        <input class="inset" id="new-number" type="number" value="1000">
-                        <div class="outset base-button" onclick="resetNumber()">Reset</div>
-                    </div>
-                    <div class="inset previous-numbers" id="previous-numbers"></div>
-                    <div class="inset current-number" id="current-number">1000</div>
-                    <div class="outset base-button generate-button" id="reach-button" onclick="randomDecrease()">
-                        Generate random number
-                    </div>
+            <div class="outset window reach-one-window">
+                <div class="reach-one-reset">
+                    <input class="inset" id="new-number" type="number" value="1000">
+                    <div class="outset base-button" onclick="resetNumber()">Reset</div>
+                </div>
+                <div class="inset previous-numbers" id="previous-numbers"></div>
+                <div class="inset current-number" id="current-number">1000</div>
+                <div class="outset base-button generate-button" id="reach-button" onclick="randomDecrease()">
+                    Generate random number
                 </div>
             </div>
-            <div class="main-grid-item"></div>
-            <div class="main-grid-item"></div>
         </main>
 
         <!-- <footer class="outset"></footer> -->

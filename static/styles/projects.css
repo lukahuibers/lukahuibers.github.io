@@ -1,4 +1,21 @@
-.grid {
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@800&display=swap');
+
+/*===========================================================*/
+/*====================[ PROJECT WINDOWS ]====================*/
+/*===========================================================*/
+
+.doto-lcd-font {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+
+/* Grid of project windows */
+.grid-projects {
     display: grid;
     /* grid-template-rows: auto; */
     /* grid-auto-rows: auto; */
@@ -12,28 +29,29 @@
 }
 
 @media only screen and (max-width: 1300px) {
-    .grid {
+    .grid-projects {
         grid-template-columns: 1fr;
     }
 }
 
-.grid-item {
+/* Project window */
+.project {
     background-color: var(--color-fg);
     display: flex;
     flex-direction: column;
-    padding: 15px 0;
+    padding: 15px;
     gap: 15px;
     color: var(--color-text);
+    scroll-margin-top: calc(var(--header-height) + 25px);
 }
 
-.grid-item-top {
+.project-top {
     display: flex;
     gap: 20px;
     height: 50px;
-    margin: 0 15px;
 }
 
-.grid-item-title {
+.project-title {
     box-sizing: border-box;
     width: 100%;
     border-style: inset;
@@ -41,47 +59,42 @@
     font-size: var(--std-font-size);
 }
 
-.grid-item-progress {
+.project-progress {
     height: 50px;
     aspect-ratio: 1 / 1;
+    &.finished {
+        background-color: #23e91c;
+    }
+    &.todo {
+        background-color: #f18a31;
+    }
+    &.concept {
+        background-color: #ec1f1f;
+    }
 }
 
-.grid-item-progress.finished {
-    background-color: #23e91c;
-}
-
-.grid-item-progress.todo {
-    background-color: #f18a31;
-}
-
-.grid-item-progress.concept {
-    background-color: #ec1f1f;
-}
-
-.grid-item-info-border {
-    margin: 0 15px;
-}
-
-.grid-item-info, .grid-item-info-animate {
+.project-info, .project-info-animate {
     min-height: calc(22px * 7);
-    overflow: hidden;
-
-    background: var(--lcd-dark);
+    /* Background */
+    background-color: var(--lcd-dark);
     background-image: linear-gradient(var(--lcd-light) .25em, transparent .1em), linear-gradient(90deg, var(--lcd-light) .1em, transparent .1em);
     background-size: 10.8px 22px;
     background-position: -2px -1px;
-
+    /* Borders */
     border-width: 5px;
     border-style: solid;
     border-color: var(--lcd-light);
-
-    /* background-color: #9cba7b;  */
+    /* Text */
     color: var(--lcd-text);
     font-size: 18px;
     white-space: pre-wrap;
+    overflow: hidden;
 }
 
-/*==========[ SUDOKU PROJECT ]==========*/
+
+/*===========================================================*/
+/*====================[ PROJECT: SUDOKU ]====================*/
+/*===========================================================*/
 
 .sudoku-grid, .sudoku-nine {
     width: fit-content;
@@ -121,4 +134,55 @@
     /* font-size: var(--std-font-size); */
     font-size: 17px;
     font-weight: bold;
+}
+
+
+/*==============================================================*/
+/*====================[ PROJECT: REACH ONE ]====================*/
+/*==============================================================*/
+
+.reach-one-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+}
+
+.reach-one-reset {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.reach-one-reset.input {
+    width: 100%;
+}
+
+.previous-numbers {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content:flex-start;
+
+    width: 250px;
+    height: 35px;
+    background-color: var(--color-bg);
+}
+
+.current-number {
+    width: 250px;
+    height: 300px;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+}
+
+.generate-button {
+    height: 50px;
+    width: 100%;
 }

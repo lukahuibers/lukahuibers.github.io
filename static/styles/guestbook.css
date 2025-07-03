@@ -1,0 +1,41 @@
+.guestbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+    .guestbook-grid {
+        grid-template-columns: 1fr;
+    }
+    .guestbook-form {
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--color-sh);
+    }
+}
+
+.guestbook-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--color-text);
+}
+
+.guestbook-input > .msg {
+    padding: 5px;
+    min-height: 150px;
+}
+
+.guestbook-input > .name {
+    padding: 5px;
+}
+
+.guestbook-input > div:focus {
+    outline: 2px solid var(--color-outline);
+}
+
+.guestbook-messages {
+    width: 100%;
+    background-color: blue;
+}

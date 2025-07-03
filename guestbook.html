@@ -4,17 +4,17 @@
         <title>Guestbook</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/index.css?4">
-        <link rel="stylesheet" type="text/css" href="./static/styles/buttons.css?4">
+        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/guestbook.css">
     </head>
 
     <body>
         <header>
-            <div class="header-bar">
+            <div class="header-text">
                 Luka Huibers /// HappyHoLuka
             </div>
             <div class="header-buttons">
-                <div class="outset header-buttons-bar-small"></div>
+                <div class="outset header-infil-left"></div>
                 <a class="outset base-button small" href="./index.html">
                     <div class="button-text">
                         Home
@@ -27,7 +27,7 @@
                 </a>
                 <a class="outset base-button small" href="./about.html">
                     <div class="button-text">
-                        About me
+                        About
                     </div>
                 </a>
                 <a class="outset base-button small" href="./blog.html">
@@ -40,47 +40,36 @@
                         Guestbook
                     </div>
                 </div>
-                <a class="outset base-button small" href="./reach_zero.html">
-                    <div class="button-text">
-                        Reach zero
-                    </div>
-                </a>
-                <div class="outset header-buttons-bar"></div>
+                <div class="outset header-infil-right"></div>
             </div>
         </header>
 
         <main>
-            <div class="main-grid-item">
-                <div class="text-contents">
-                    <p>Guestbook... TODO</p>
-                </div>
+            <div class="text-contents">
+                <p>Guestbook... TODO</p>
             </div>
-            <div class="main-grid-item">
-                <div class="outset window guestbook-grid">
-                    <div class="guestbook-form">
-                        <div class="guestbook-input">
-                            <p>Leave a message:</p>
-                            <div class="inset msg" contenteditable="true">
-                                Message
-                            </div>
-                            <p>And sign it with your (made up) name:</p>
-                            <div class="inset name" contenteditable="true">
-                                Name
-                            </div>
+            <div class="outset window guestbook-grid">
+                <div class="guestbook-form">
+                    <div class="guestbook-input">
+                        <p>Leave a message:</p>
+                        <div class="inset msg" contenteditable="true">
+                            Message
                         </div>
-                        <div class="outset base-button guestbook-submit">
-                            <div class="button-text">
-                                Submit
-                            </div>
+                        <p>And sign it with your (made up) name:</p>
+                        <div class="inset name" contenteditable="true">
+                            Name
                         </div>
                     </div>
-                    <div class="guestbook-messages">
-                        Messages.
+                    <div class="outset base-button guestbook-submit">
+                        <div class="button-text">
+                            Submit
+                        </div>
                     </div>
                 </div>
+                <div class="guestbook-messages">
+                    Messages.
+                </div>
             </div>
-            <div class="main-grid-item"></div>
-            <div class="main-grid-item"></div>
         </main>
 
         <!-- <footer class="outset"></footer> -->

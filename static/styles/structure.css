@@ -1,0 +1,240 @@
+
+/*===============================================================*/
+/*====================[ VARIABLES & GENERAL ]====================*/
+/*===============================================================*/
+
+:root {
+    /* Structural variables */
+    --header-height: 58px;
+    --std-font-size: 15px;
+    /* Colour variables */
+    --color-fg: #dee4e8; /* Foreground */
+    --color-in: #c7cbce; /* Indents */
+    --color-sh: #7a848c; /* Shadow */
+    --color-bg: #eff2f4; /* Background */
+    --color-hl: #F7F9F9; /* Highlights */
+    --color-text: #0B032D; /* Text */
+    --color-outline: #30383e;
+    --color-outline2: #525a5f;
+    --color-hd: #4a3d7c; /* Header */
+    --color-hd: #62528D;
+
+    --lcd-dark: #9cba7b;
+    --lcd-light: #acca8a;
+    --lcd-text: #132130;
+}
+
+* {
+    font-family: 'Lucida Console', Courier, monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: calc(100vh - var(--header-height));
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: calc(100vh - var(--header-height));
+    width: 100%;
+    /* background-image: url(../images/noise_bg.svg); */
+    /* background-position: center; */
+    /* background-size: cover; */
+}
+
+
+/*==================================================*/
+/*====================[ HEADER ]====================*/
+/*==================================================*/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--color-hd);
+}
+
+.header-text {
+    padding: 8px;
+    font-size: var(--std-font-size);
+    color: var(--color-fg);
+    /* text-wrap-mode: nowrap; */
+    /* overflow: hidden; */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1px;
+}
+
+.header-infil-left {
+    height: 26px;
+    width: 26px;
+}
+.header-infil-right {
+    height: 26px;
+    flex: 1;
+} 
+
+@media only screen and (max-width: 520px) {
+    .header-infil-left, .header-infil-right {
+        display: none;
+    }
+    .base-button.small {
+        flex: 1;
+    }
+}
+
+
+/*===================================================*/
+/*====================[ BUTTONS ]====================*/
+/*===================================================*/
+
+/* Standard button class */
+.base-button {
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.8s;
+    .button-text {
+        transition: transform 0.1s;
+        transform: translateY(-1px);
+    };
+    /* Pushed down buttons */
+    &.selected {
+        border-style: inset;
+        border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+        cursor: default;
+        .button-text {
+            transform:translateY(1px);
+        }
+    };
+    /* Medium buttons */
+    &.medium {
+        height: 50px;
+        font-size: 40px;
+        padding: 2px 5px;
+        width: 150px;
+    };
+    /* Small buttons */
+    &.small {
+        height: 26px;
+        font-size: var(--std-font-size);
+        /* width: 104px; */
+        min-width: 90px
+    };
+    /* Exit buttons (X) */
+    &.exit {
+        width: 25px;
+        aspect-ratio: 1 / 1;
+        font-size: 21px;
+    };
+    /* Project buttons (view project) */
+    &.project {
+        height: 35px;
+        font-size: var(--std-font-size);
+        display: flex;
+        justify-content: center
+    };
+    /* Guestbook submit button */
+    &.guestbook-submit {
+        flex: 1;
+        max-height: 35px;
+        font-size: var(--std-font-size);
+        padding: 0 5px;
+        margin-top: auto;
+    };
+}
+
+/* Hover effect for (text of) buttons that are not already pushed */
+.base-button:hover:not(.selected) {
+    border-style: solid;
+    border-color: var(--color-hl);
+    .button-text {
+        transform: translateY(1px);
+        text-decoration: underline;
+    }
+}
+
+
+/*==============================================================*/
+/*====================[ STRUCTURAL CLASSES ]====================*/
+/*==============================================================*/
+
+.outset {
+    border: 4px outset;
+    border-color: var(--color-hl) var(--color-fg) var(--color-fg) var(--color-hl);
+    background-color: var(--color-fg);
+    outline: 2px solid var(--color-outline);
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+
+.inset {
+    border: 4px inset;
+    border-color: var(--color-fg) var(--color-hl) var(--color-hl) var(--color-fg);
+    background-color: var(--color-fg);
+    /* outline: 2px solid var(--color-outline); */
+    box-sizing: border-box;
+    color: var(--color-text);
+}
+
+.text-contents {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    text-align: justify;
+    text-justify: auto;
+}
+
+/*==========================================================*/
+/*====================[ OVERLAY WINDOW ]====================*/
+/*==========================================================*/
+
+.overlay {
+    display: none;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.window {
+    padding: 15px;
+    color: var(--color-text);
+    width: 100%;
+    height: 100%;
+}
+
+.window-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.window-text {
+    font-size: var(--std-font-size);
+    margin-top: 10px;
+}
+
+
+/*===================================================*/
+/*====================[ ... ]====================*/
+/*===================================================*/
+
+
+
+/*===================================================*/
+/*====================[ ... ]====================*/
+/*===================================================*/
