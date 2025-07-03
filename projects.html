@@ -193,11 +193,11 @@
                                 Sa blog and a guestbook, among other things.
                             </div>
                         </div>
-                        <div class="outset base-button project" onclick="enableOverlay(1)">
+                        <a class="outset base-button project" href="#project1">
                             <div class="button-text">
                                 View project
                             </div>
-                        </div>
+                        </a>
                     </div>
     
                     <div class="outset grid-item" id="project2">
@@ -212,11 +212,11 @@
                                 S...
                             </div>
                         </div>
-                        <div class="outset base-button project" onclick="enableOverlay(2)">
+                        <a class="outset base-button project" href="#project2">
                             <div class="button-text">
                                 View project
                             </div>
-                        </div>
+                        </a>
                     </div>
     
                     <div class="outset grid-item" id="project3">
@@ -230,11 +230,11 @@
                             <div class="grid-item-info-animate doto-lcd-font">
                             </div>
                         </div>
-                        <div class="outset base-button project">
+                        <a class="outset base-button project" href="#project3">
                             <div class="button-text">
                                 View project
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="outset grid-item" id="project4">
@@ -249,11 +249,11 @@
                                 SINFO
                             </div>
                         </div>
-                        <div class="outset base-button project">
+                        <a class="outset base-button project" href="project4">
                             <div class="button-text">
                                 View project
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="outset grid-item" id="project5">
@@ -268,17 +268,17 @@
                                 SINFO
                             </div>
                         </div>
-                        <div class="outset base-button project">
+                        <a class="outset base-button project" href="#project5">
                             <div class="button-text">
                                 View project
                             </div>
-                        </div>
+                        </a>
                     </div>
     
                 </div>
             </div>
-            <div class="main-grid-item"></div>
-            <div class="main-grid-item"></div>
+            <!-- <div class="main-grid-item"></div> -->
+            <!-- <div class="main-grid-item"></div> -->
         </main>
 
         <!-- <footer class="outset"></footer> -->
@@ -290,7 +290,7 @@
             overlay_.style.display = "block";
             var overlayTitle = `Project ${project}: `;
             var overlayText = "";
-            switch (project) {
+            switch (parseInt(project)) {
                 case 1: /* Personal Website */
                     overlayTitle += "a personal website";
                     overlayText = "The goal of this project was to create a website via Github Pages to show (and host) \
@@ -303,6 +303,10 @@
                         is to have a playable version of Sudoku where games are automatically generated to play, and you can \
                         check whether you completed the puzzle succesfully. ";
                     overlay.getElementsByClassName('sudoku-grid')[0].style.display = "grid";
+                    break;
+                default: 
+                    overlayTitle += "TODO";
+                    overlayText = "TODO";
             }
             overlay.querySelector('#window-title').innerHTML = overlayTitle;
             overlay.querySelector('#window-text').innerHTML = overlayText;
@@ -311,6 +315,22 @@
         function disableOverlay() {
             overlay.style.display = 'none';
             overlay.getElementsByClassName('sudoku-grid')[0].style.display = 'none';
+        }
+
+        
+        // PARSE URL TO SELECT PROJECT TO OPEN
+        window.navigation.addEventListener("navigate", (event) => {
+            console.log("NAVIGATION EVENT CALLED")
+            var project = event.destination.url.split('#')[1];
+            if (project) {
+                var projectNr = project.substring(project.length-1, project.length);
+                enableOverlay(projectNr);
+            }
+        })
+        var project = document.URL.split('#')[1];
+        if (project) {
+            var projectNr = project.substring(project.length-1, project.length);
+            enableOverlay(projectNr);
         }
 
 
@@ -363,10 +383,6 @@
         ]
 
         function animateFace(el) {
-            // let elementText = el.innerHTML;
-            // elementText = elementText.replace(/^\s+S|\n\s+S|\s+$/g, '').replace(/\\\s/g, '\n');
-            // el.innerHTML = elementText;
-
             const faceStatesLength = faceStates.length;
             let i = 0;
             const writter = setInterval(() => {
