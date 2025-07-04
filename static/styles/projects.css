@@ -97,8 +97,6 @@
 /*===========================================================*/
 
 .sudoku-grid, .sudoku-nine {
-    width: fit-content;
-    height: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -106,7 +104,10 @@
 }
 
 .sudoku-grid {
+    width: fit-content;
+    height: fit-content;
     margin: auto;
+    margin-top: 30px;
     display: none;
     gap: 3px;
     background-color: var(--color-outline);
@@ -114,10 +115,7 @@
 }
 
 .sudoku-nine {
-    /* justify-content: center; */
-    /* align-items: center; */
-    gap: 2px;
-    background-color: var(--color-outline);
+    gap: 1.5px;
 }
 
 .sudoku-field {
@@ -128,12 +126,7 @@
     align-items: center;
     width: 25px;
     aspect-ratio: 1 / 1;
-}
-
-.sudoku-nr {
-    /* font-size: var(--std-font-size); */
-    font-size: 17px;
-    font-weight: bold;
+    overflow-wrap: anywhere;
 }
 
 

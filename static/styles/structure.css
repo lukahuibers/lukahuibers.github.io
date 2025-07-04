@@ -54,6 +54,7 @@ main {
 
 header {
     position: sticky;
+    width: 100vw;
     top: 0;
     z-index: 1;
     background-color: var(--color-hd);
