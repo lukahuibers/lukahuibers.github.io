@@ -1,0 +1,15 @@
+.solarpanel {
+    width: 180px;
+    height: 40px;
+    background-image: 
+        linear-gradient(var(--color-bg) 0% 2.5%, transparent 2.5% 97.5%, var(--color-bg) 97.5% 100%),
+        linear-gradient(90deg, var(--color-bg) 0% 2.5%, transparent 2.5% 97.5%, var(--color-bg) 97.5% 100%),
+        radial-gradient(#0c275c 82%, var(--color-bg) 82%);
+    background-size: 20px 20px;
+    border: 3px solid var(--color-bg);
+    outline: 2px solid var(--color-outline);
+
+    transform: perspective(25px) rotateX(3deg);
+
+    margin: 5px 15px;
+}

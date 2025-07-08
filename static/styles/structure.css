@@ -3,6 +3,8 @@
 /*====================[ VARIABLES & GENERAL ]====================*/
 /*===============================================================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 :root {
     /* Structural variables */
     --header-height: 58px;
@@ -22,6 +24,9 @@
     --lcd-dark: #9cba7b;
     --lcd-light: #acca8a;
     --lcd-text: #132130;
+
+    --color-main: #56876D;
+    --color-hd: var(--color-main);
 }
 
 * {
@@ -33,18 +38,45 @@ html {
 }
 
 body {
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100vh - 50px);
+
     background-color: var(--color-bg);
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 25px max(100px, 10%);
+    background-image: radial-gradient(var(--color-bg) 4px, var(--lcd-light) 5px, var(--color-bg) 5px);
+    background-size: 15px 15px;
+    background-attachment: fixed;
+    animation: bg-scroll 4s linear infinite;
+}
+
+@keyframes bg-scroll {
+    from {
+        background-position: 0px 15px;
+    } to {
+        background-position: 0px 0px;
+    }
 }
 
 main {
-    min-height: calc(100vh - var(--header-height));
+    /* min-height: calc(calc(100vh - var(--header-height)) - 58px); */
+    min-height: calc(100vh - 160px);
     width: 100%;
+    background-color: var(--color-fg);
     /* background-image: url(../images/noise_bg.svg); */
     /* background-position: center; */
     /* background-size: cover; */
+}
+
+@media only screen and (max-width: 720px) {
+    header {
+        position: sticky;
+    }
+    body {
+        margin: 0px;
+    }
+    main {
+        min-height: calc(100vh - var(--header-height));
+    }
 }
 
 
@@ -52,33 +84,44 @@ main {
 /*====================[ HEADER ]====================*/
 /*==================================================*/
 
-header {
-    position: sticky;
-    width: 100%;
-    top: 0;
-    z-index: 1;
-    background-color: var(--color-hd);
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-text {
-    padding: 8px;
-    font-size: var(--std-font-size);
-    color: var(--color-fg);
+    padding: 0 0 4.5px 12px;
+    /* font-size: var(--std-font-size); */
+    color: var(--color-hl);
     /* text-wrap-mode: nowrap; */
     /* overflow: hidden; */
+
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+.header-text::first-letter {
+    font-size: 45px;
+    color: var(--lcd-light);
 }
 
 .header-buttons {
     display: flex;
     gap: 1px;
+    z-index: 1;
+    /* margin: 2px 0px; */
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 .header-infil-left {
-    height: 26px;
-    width: 26px;
+    height: 28px;
+    width: 28px;
 }
 .header-infil-right {
-    height: 26px;
+    height: 28px;
     flex: 1;
 } 
 
@@ -104,6 +147,9 @@ header {
     cursor: pointer;
     transition: border-color 0.8s;
     .button-text {
+        display: flex;
+        justify-content: center;
+        gap: 3px;
         transition: transform 0.1s;
         transform: translateY(-1px);
     };
@@ -125,10 +171,11 @@ header {
     };
     /* Small buttons */
     &.small {
-        height: 26px;
+        height: 28px;
         font-size: var(--std-font-size);
         /* width: 104px; */
-        min-width: 90px
+        /* min-width: 90px; */
+        padding: 0px 5px;
     };
     /* Exit buttons (X) */
     &.exit {
@@ -163,6 +210,11 @@ header {
     }
 }
 
+.button-text > svg {
+    height: 15px;
+    /* fill: var(--color-text); */
+    fill: var(--color-main);
+}
 
 /*==============================================================*/
 /*====================[ STRUCTURAL CLASSES ]====================*/
@@ -175,6 +227,13 @@ header {
     outline: 2px solid var(--color-outline);
     box-sizing: border-box;
     color: var(--color-text);
+    &.header {
+        background-color: var(--color-hd);
+        color: var(--color-fg);
+        /* border-color: var(--lcd-dark) var(--color-hd) var(--color-hd) var(--lcd-dark); */
+        border-color: var(--lcd-dark);
+        top: 0;
+    }
 }
 
 .inset {
