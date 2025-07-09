@@ -4,23 +4,26 @@
         <title>My projects</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css">
-        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css?1">
+        <link rel="stylesheet" type="text/css" href="./static/styles/projects.css?1">
     </head>
 
-    
     <body>
         <header>
             <div class="outset header header-top">
                 <div class="header-text">
                     Luka Huibers /// HappyHoLuka
                 </div>
+                <div class="inset header-clock doto-lcd-font">
+                    <div class="clock">XX XX</div>
+                    <div class="clock">X-XXX-XXXX</div>
+                </div>
             </div>
             <div class="header-buttons">
                 <a class="outset base-button small" href="./index.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Home
                     </div>
@@ -28,7 +31,7 @@
                 <div class="outset base-button small selected">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M240-240v-80h480v80H240Zm240-496 240 240-56 56-184-184-184 184-56-56 240-240Z"/>
+                            <path d="M160-210q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Projects
                     </div>
@@ -36,7 +39,7 @@
                 <a class="outset base-button small" href="./about.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         About
                     </div>
@@ -44,7 +47,7 @@
                 <a class="outset base-button small" href="./blog.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Blog
                     </div>
@@ -52,12 +55,12 @@
                 <a class="outset base-button small" href="./guestbook.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Guestbook
                     </div>
                 </a>
-                <div class="outset header-infil-right"></div>
+                <div class="outset header-buttons-stretch"></div>
             </div>
         </header>
         
@@ -65,7 +68,7 @@
             <div class="outset window">
                 <div class="window-top">
                     <div class="window-title" id="window-title">Title</div>
-                    <a class="outset base-button exit" href="#">X</a>
+                    <button class="outset base-button exit" onclick="disableOverlay()">X</button>
                 </div>
                 <div class="window-text" id="window-text">Text</div>
                 <div class="window-content">
@@ -185,7 +188,6 @@
             
             <div class="grid-projects">
                 <div class="outset project" id="1">
-                    <!-- <div id="1"></div> -->
                     <div class="project-top">
                         <div class="inset project-title">
                             Project 1: a personal website
@@ -193,17 +195,17 @@
                         <div class="outset project-progress todo"></div>
                     </div>
                     <div class="inset">
-                        <div class="project-info doto-lcd-font">
+                        <div class="project-info doto-lcd-font" contenteditable=true>
                             SA website via Github Pages (yes, this website) to show projects 
                             Sthat I am working on. In the future, this website will also contain 
                             Sa blog and a guestbook, among other things.
                         </div>
                     </div>
-                    <a class="outset base-button project" href="#1">
+                    <button class="outset base-button project" onclick="enableOverlay(1)">
                         <div class="button-text">
                             View project
                         </div>
-                    </a>
+                    </button>
                 </div>
     
                 <div class="outset project" id="2">
@@ -218,11 +220,11 @@
                             S...
                         </div>
                     </div>
-                    <a class="outset base-button project" href="#2">
+                    <button class="outset base-button project" onclick="enableOverlay(2)">
                         <div class="button-text">
                             View project
                         </div>
-                    </a>
+                    </button>
                 </div>
     
                 <div class="outset project" id="3">
@@ -236,11 +238,11 @@
                         <div class="project-info-animate doto-lcd-font">
                         </div>
                     </div>
-                    <a class="outset base-button project" href="#3">
+                    <button class="outset base-button project" onclick="enableOverlay(3)">
                         <div class="button-text">
                             View project
                         </div>
-                    </a>
+                    </button>
                 </div>
 
                 <!-- <div class="outset project" id="4">
@@ -286,16 +288,17 @@
         <!-- <footer class="outset"></footer> -->
     </body>
 
+    <script src="static/js/clock.js"></script>
     <script>
         //===================================================//
         //====================[ OVERLAY ]====================//
         //===================================================//
 
-        let overlay = document.getElementById('overlay_');
+        const overlay = document.getElementById('overlay_');
         function enableOverlay(project) {
             overlay_.style.display = "block";
-            var overlayTitle = `Project ${project}: `;
-            var overlayText = "";
+            let overlayTitle = `Project ${project}: `;
+            let overlayText = "";
             switch (parseInt(project)) {
                 case 1: // Personal Website
                     overlayTitle += "a personal website";
@@ -316,32 +319,44 @@
             }
             overlay.querySelector('#window-title').innerHTML = overlayTitle;
             overlay.querySelector('#window-text').innerHTML = overlayText;
-            document.getElementsByTagName('main')[0].style.display = 'none';
+            document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         }
 
         // Disable the project overlay and return to the overview
         function disableOverlay() {
             overlay.style.display = 'none';
             overlay.getElementsByClassName('sudoku-grid')[0].style.display = 'none';
-            document.getElementsByTagName('main')[0].style.display = 'grid';
+            document.getElementsByTagName('body')[0].style.overflow = 'inherit';
         }
 
         // On nagivation change (url#projectNr), parse the url to open the correct project
-        window.navigation.addEventListener("navigate", (event) => {
-            console.log("NAVIGATION EVENT CALLED")
-            var project = event.destination.url.split('#')[1];
-            if (project) {
-                var projectNr = project.substring(project.length-1, project.length);
-                enableOverlay(projectNr);
-            } else {
-                disableOverlay();
-            }
-        })
+        // window.navigation.addEventListener("navigate", (event) => {
+        //     console.log("NAVIGATION EVENT CALLED")
+        //     var project = event.destination.url.split('#')[1];
+        //     if (project) {
+        //         var projectNr = project.substring(project.length-1, project.length);
+        //         enableOverlay(projectNr);
+        //     } else {
+        //         disableOverlay();
+        //     }
+        // })
+        // On window load open the selected project (if any is selected)
         var project = document.URL.split('#')[1];
         if (project) {
             var projectNr = project.substring(project.length-1, project.length);
             enableOverlay(projectNr);
         }
+
+        // const projects = document.getElementsByClassName('project');
+        // function randomiseProjectLocs() {
+        //     for (let i = 0; i < projects.length; i++) {
+        //         let project = projects[i];
+        //         project.style.marginLeft = (Math.random()*2-1)*10 + '%';
+        //         project.style.marginright = (Math.random()*2-1)*10 + '%';
+        //         // project.style.marginRight = '10%';
+        //     }
+        // }
+        // randomiseProjectLocs();
 
 
         //==================================================//

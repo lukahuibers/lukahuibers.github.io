@@ -4,8 +4,8 @@
         <title>Blog</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css">
-        <link rel="stylesheet" type="text/css" href="./static/styles/blog.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles/structure.css?1">
+        <link rel="stylesheet" type="text/css" href="./static/styles/blog.css?1">
     </head>
 
     <body>
@@ -13,6 +13,10 @@
             <div class="outset header header-top">
                 <div class="header-text">
                     Luka Huibers /// HappyHoLuka
+                </div>
+                <div class="inset header-clock doto-lcd-font">
+                    <div class="clock">XX XX</div>
+                    <div class="clock">X-XXX-XXXX</div>
                 </div>
                 <!-- <div class="solarpanel"></div> -->
                 <!-- <div class="solarpanel"></div> -->
@@ -23,7 +27,7 @@
                 <a class="outset base-button small" href="./index.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Home
                     </div>
@@ -31,7 +35,7 @@
                 <a class="outset base-button small" href="./projects.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Projects
                     </div>
@@ -39,7 +43,7 @@
                 <a class="outset base-button small" href="./about.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         About
                     </div>
@@ -47,7 +51,7 @@
                 <div class="outset base-button small selected">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M240-240v-80h480v80H240Zm240-496 240 240-56 56-184-184-184 184-56-56 240-240Z"/>
+                            <path d="M160-210q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Blog
                     </div>
@@ -55,12 +59,12 @@
                 <a class="outset base-button small" href="./guestbook.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                            <path d="M680-320v-360H320v-80h440v440h-80ZM480-120v-360H120v-80h440v440h-80Z"/>
+                            <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Guestbook
                     </div>
                 </a>
-                <div class="outset header-infil-right"></div>
+                <div class="outset header-buttons-stretch"></div>
             </div>
         </header>
 
@@ -73,6 +77,7 @@
         <!-- <footer class="outset"></footer> -->
     </body>
 
+    <script src="static/js/clock.js"></script>
     <script>
     </script>
 </html>

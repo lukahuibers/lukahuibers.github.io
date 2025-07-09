@@ -10,7 +10,7 @@
     }
     .guestbook-form {
         padding-bottom: 15px;
-        border-bottom: 2px solid var(--color-sh);
+        border-bottom: 2px solid black;
     }
 }
 
