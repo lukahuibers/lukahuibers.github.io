@@ -56,7 +56,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     /* Background */
-    background-image: radial-gradient(var(--color-background) 4px, var(--color-primary) 5px, var(--color-background) 5px);
+    background-image: radial-gradient(var(--color-background) 4px, var(--color-accent) 5px, var(--color-background) 5px);
     background-size: 15px 15px;
     background-attachment: fixed;
     animation: bg-scroll 4s linear infinite;

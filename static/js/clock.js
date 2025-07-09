@@ -1,8 +1,8 @@
 const clock = document.getElementsByClassName('clock');
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-var currentTime = new Date();
 
-function setClockTime(time) {
+function setClockTime() {
+    let time = new Date();
     let minutes = time.getMinutes();
     if (minutes < 10) { minutes = '0' + minutes; }
     let hours = time.getHours();
@@ -11,7 +11,8 @@ function setClockTime(time) {
     clock[0].innerText = hours + (dots===' '?':':' ') + minutes;
 }
 
-function setClockDate(time) {
+function setClockDate() {
+    let time = new Date();
     let day = time.getDate();
     if (day < 10) { day = '0' + day; }
     let month = MONTHS[time.getMonth()];
@@ -19,6 +20,6 @@ function setClockDate(time) {
     clock[1].innerText = day + '-' + month + '-' + year;
 }
 
-setClockTime(currentTime);
-setClockDate(currentTime);
-setInterval(setClockTime, 1000, currentTime);
+setClockTime();
+setClockDate();
+setInterval(setClockTime, 1000, );
