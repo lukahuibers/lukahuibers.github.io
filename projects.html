@@ -11,13 +11,7 @@
     <body>
         <header>
             <div class="outset header header-top">
-                <div class="header-text">
-                    Luka Huibers /// HappyHoLuka
-                </div>
-                <div class="inset header-clock doto-lcd-font">
-                    <div class="clock">XX XX</div>
-                    <div class="clock">X-XXX-XXXX</div>
-                </div>
+                <div class="header-text">Luka Huibers</div>
             </div>
             <div class="header-buttons">
                 <a class="outset base-button small" href="./index.html">
@@ -44,22 +38,22 @@
                         About
                     </div>
                 </a>
-                <a class="outset base-button small" href="./blog.html">
+                <a class="outset base-button small" href="./game.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                             <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
-                        Blog
+                        Game
                     </div>
                 </a>
-                <a class="outset base-button small" href="./guestbook.html">
+                <!-- <a class="outset base-button small" href="./guestbook.html">
                     <div class="button-text">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                             <path d="M160-290h560v-380H160v380Zm0 80q-33 0-56.5-23.5T80-290v-380q0-33 23.5-56.5T160-750h560q33 0 56.5 23.5T800-670v90h20q25 0 42.5 17.5T880-520v80q0 26-17.5 43T820-380h-20v90q0 33-23.5 56.5T720-210H160Z"/>
                         </svg>
                         Guestbook
                     </div>
-                </a>
+                </a> -->
                 <div class="outset header-buttons-stretch"></div>
             </div>
         </header>
@@ -68,7 +62,9 @@
             <div class="outset window">
                 <div class="window-top">
                     <div class="window-title" id="window-title">Title</div>
-                    <button class="outset base-button exit" onclick="disableOverlay()">X</button>
+                    <button class="outset base-button exit" onclick="disableOverlay()">
+                        <div class="button-text">X</div>
+                    </button>
                 </div>
                 <div class="window-text" id="window-text">Text</div>
                 <div class="window-content">
@@ -173,6 +169,17 @@
                             <div class="inset sudoku-field" onclick="sudokuClick(8, 8,8, this)"></div>
                         </div>
                     </div>
+                    <div class="reach-one-window">
+                        <div class="reach-one-reset">
+                            <input class="inset" id="new-number" type="number" value="1000">
+                            <div class="outset base-button" onclick="resetNumber()">Reset</div>
+                        </div>
+                        <div class="inset previous-numbers" id="previous-numbers"></div>
+                        <div class="inset current-number" id="current-number">1000</div>
+                        <button class="outset base-button generate-button" id="reach-button" onclick="randomDecrease()">
+                            Generate random number
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,24 +252,24 @@
                     </button>
                 </div>
 
-                <!-- <div class="outset project" id="4">
+                <div class="outset project" id="4">
                     <div class="project-top">
                         <div class="inset project-title">
-                            TITLE
+                            Reach One
                         </div>
                         <div class="outset project-progress concept"></div>
                     </div>
                     <div class="inset">
                         <div class="project-info doto-lcd-font">
-                            SINFO
+                            S...
                         </div>
                     </div>
-                    <a class="outset base-button project" href="#4">
+                    <button class="outset base-button project" onclick="enableOverlay(4)">
                         <div class="button-text">
                             View project
                         </div>
-                    </a>
-                </div> -->
+                    </button>
+                </div>
 
                 <!-- <div class="outset project" id="5">
                     <div class="project-top">
@@ -276,19 +283,16 @@
                             SINFO
                         </div>
                     </div>
-                    <a class="outset base-button project" href="#5">
+                    <button class="outset base-button project" onclick="enableOverlay(5)">
                         <div class="button-text">
                             View project
                         </div>
-                    </a>
+                    </button>
                 </div> -->
             </div>
         </main>
-
-        <!-- <footer class="outset"></footer> -->
     </body>
 
-    <script src="static/js/clock.js"></script>
     <script>
         //===================================================//
         //====================[ OVERLAY ]====================//
@@ -313,6 +317,10 @@
                         check whether you completed the puzzle succesfully. ";
                     overlay.getElementsByClassName('sudoku-grid')[0].style.display = "grid";
                     break;
+                case 4: // Reach One
+                    overlayTitle += "";
+                    overlayText = "";
+                    overlay.getElementsByClassName('reach-one-window')[0].style.display = "flex";
                 default: 
                     overlayTitle += "TODO";
                     overlayText = "TODO";
@@ -326,6 +334,7 @@
         function disableOverlay() {
             overlay.style.display = 'none';
             overlay.getElementsByClassName('sudoku-grid')[0].style.display = 'none';
+            overlay.getElementsByClassName('reach-one-window')[0].style.display = "none";
             document.getElementsByTagName('body')[0].style.overflow = 'inherit';
         }
 
@@ -461,6 +470,31 @@
             //         that one number until this is no longer possible
         }
         generateSudoku(1);
+
+
+        //=====================================================//
+        //====================[ REACH ONE ]====================//
+        //=====================================================//
+
+        function randomDecrease() {
+            var currentNumber = document.getElementById('current-number').innerHTML;
+            var newNumber = Math.round((Math.floor(Math.random() * currentNumber) + Math.round(Math.random() * currentNumber))/2);
+            document.getElementById('previous-numbers').innerHTML += ` ${newNumber}`;
+            document.getElementById('current-number').innerHTML = newNumber;
+            if (newNumber == 0) {
+                document.getElementById('reach-button').innerHTML = 'Reset number';
+                document.getElementById('reach-button').onclick = resetNumber;
+            }
+        }
+
+        function resetNumber() {
+            document.getElementById('previous-numbers').innerHTML = "";
+            var val = document.getElementById('new-number').value;
+            document.getElementById('current-number').innerHTML = val;
+            document.getElementById('reach-button').innerHTML = 'Generate random number';
+            document.getElementById('reach-button').onclick = randomDecrease;
+        }
+
 
         //=======================================================//
         //====================[ LCD SCREENS ]====================//
